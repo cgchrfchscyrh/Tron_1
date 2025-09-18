@@ -6,7 +6,7 @@ import websocket
 from datetime import datetime
 
 # Replace this ACCID value with your robot's actual serial number (SN)
-ACCID = None
+ACCID = "PF_TRON1A_260"
 
 # Atomic flag for graceful exit
 should_exit = False
