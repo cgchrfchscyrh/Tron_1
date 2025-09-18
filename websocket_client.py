@@ -1,4 +1,4 @@
-import json
+import json, sys
 import uuid
 import threading
 import time
@@ -106,7 +106,8 @@ def on_message(ws, message):
     if show_messages:
         current_time = time.time()
         if current_time - last_print_time >= print_interval:
-            print(f"Received message: {message}")
+            sys.stdout.write("\r" + "Latest message: " + message + " " * 20)  # 清空残留
+            sys.stdout.flush()
             last_print_time = current_time
 
 # WebSocket on_close callback
